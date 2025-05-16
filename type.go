@@ -90,7 +90,7 @@ type RoomInfo struct {
 		AllowChangeAreaTime  int    `json:"allow_change_area_time"`
 		AllowUploadCoverTime int    `json:"allow_upload_cover_time"`
 		StudioInfo           struct {
-			Status     int           `json:"status"`
+			状态     int           `json:"status"`
 			MasterList []interface{} `json:"master_list"`
 		} `json:"studio_info"`
 	} `json:"data"`
@@ -107,7 +107,7 @@ type LineRow struct {
 // UpdateIndex 更新队列索引并返回修改后的map
 func (r LineRow) UpdateIndex(UpdateType int) {
 	switch UpdateType {
-	case 0:
+	case 1:
 		r.GiftIndex = make(map[string]int)
 		for i, l := range r.GiftLine {
 			r.GiftIndex[l.OpenID] = i + 1
